@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "bawnorton-web"
-  }
+    "default": "bawnorton",
+    "staging": "bawnorton"
+  },
+  "targets": {}
 }

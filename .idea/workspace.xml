@@ -1,10 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="068532f7-115d-4b26-a008-1eacb5c3ff95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="a813469d-7c6a-45b2-9fa5-d96211f4533c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Bawnorton.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/firebase-debug.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/scripts/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/firebase-hosting-merge.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/firebase-hosting-merge.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/firebase-hosting-pull-request.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/firebase-hosting-pull-request.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/pbjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/pbts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/proto-loader-gen-types" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rimraf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/balanced-match/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-js/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-js/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-js/configurator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-js/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-js/postinstall.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/core-util-is/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/escalade/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/escalade/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/escalade/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/firebase/compat/remote-config/dist/functions/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/firebase/compat/remote-config/dist/performance/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/idb/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/idb/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/idb/gulpfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/idb/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node-fetch/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node-fetch/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/node-fetch/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/once/once.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pako/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pako/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pako/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/pako/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/path-is-absolute/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/license.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/process-nextick-args/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/protobufjs/cli/node_modules/tmp/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/protobufjs/cli/node_modules/tmp/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/protobufjs/cli/node_modules/tmp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/protobufjs/cli/node_modules/tmp/lib/tmp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/require-directory/.jshintrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/require-directory/.npmignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/require-directory/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/require-directory/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/require-directory/README.markdown" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/require-directory/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/bin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/rimraf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/string_decoder/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-ansi/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-ansi/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-ansi/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/strip-ansi/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tmp/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tmp/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tmp/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tmp/lib/tmp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/CopyrightNotice.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/tslib.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/tslib.es6.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/tslib.es6.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/tslib.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/tslib/tslib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrap-ansi/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrap-ansi/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/wrap-ansi/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/y18n/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/y18n/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/y18n/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/y18n/index.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,16 +107,24 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="25wHWgVflLuyRDlfSoI27tJKkNa" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="25wvRHfWhPgpNtMR0GNbIHTz8Zi" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -32,8 +133,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -41,26 +144,24 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/js" />
-      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="068532f7-115d-4b26-a008-1eacb5c3ff95" name="Default Changelist" comment="" />
-      <created>1646431262146</created>
+      <changelist id="a813469d-7c6a-45b2-9fa5-d96211f4533c" name="Default Changelist" comment="" />
+      <created>1646450953816</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1646431262146</updated>
-      <workItem from="1646431263563" duration="5105000" />
+      <updated>1646450953816</updated>
+      <workItem from="1646450955211" duration="18013000" />
     </task>
     <servers />
   </component>
