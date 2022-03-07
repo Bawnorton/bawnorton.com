@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a813469d-7c6a-45b2-9fa5-d96211f4533c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/IMG_6142.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/MovieSync.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/player.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/player.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/player.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/player.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/player.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/player.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/player.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646450953816</updated>
       <workItem from="1646450955211" duration="20007000" />
-      <workItem from="1646592218870" duration="20981000" />
+      <workItem from="1646592218870" duration="22979000" />
     </task>
     <servers />
   </component>
