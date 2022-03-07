@@ -38,7 +38,8 @@
 
 #titlediv a {
     text-decoration: none;
-    color: rgba(255, 147, 147, 1)
+    color: rgba(255, 147, 147, 1);
+    cursor: pointer;
 }
 
 #videdirtext {
