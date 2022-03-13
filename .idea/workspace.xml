@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a813469d-7c6a-45b2-9fa5-d96211f4533c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/firebase-debug 2.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +109,7 @@
       <workItem from="1646941354880" duration="1506000" />
       <workItem from="1647053116264" duration="88000" />
       <workItem from="1647053684055" duration="638000" />
-      <workItem from="1647131795023" duration="7304000" />
+      <workItem from="1647131795023" duration="10574000" />
     </task>
     <servers />
   </component>

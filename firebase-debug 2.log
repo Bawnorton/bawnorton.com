@@ -1,0 +1,13 @@
+[debug] [2022-03-13T04:06:28.597Z] ----------------------------------------------------------------------
+[debug] [2022-03-13T04:06:28.599Z] Command:       /usr/local/Cellar/node/17.6.0/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2022-03-13T04:06:28.599Z] CLI Version:   10.2.2
+[debug] [2022-03-13T04:06:28.599Z] Platform:      darwin
+[debug] [2022-03-13T04:06:28.599Z] Node Version:  v17.6.0
+[debug] [2022-03-13T04:06:28.604Z] Time:          Sat Mar 12 2022 20:06:28 GMT-0800 (Pacific Standard Time)
+[debug] [2022-03-13T04:06:28.605Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-03-13T04:06:28.693Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-03-13T04:06:28.697Z] > authorizing via signed-in user (bnjmnnrtn@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[debug] [2022-03-13T04:06:28.773Z] [hub] writing locator at /var/folders/88/glf__2v94hx7vzdls04cx1zc0000gn/T/hub-bawnorton.json
+[debug] [2022-03-13T04:06:28.793Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/bawnorton/sites 
