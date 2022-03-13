@@ -2,7 +2,7 @@ import * as THREE from "https://cdn.skypack.dev/three@v0.138.2";
 import { OrbitControls } from "./OrbitControls.js"
 
 const scene = new THREE.Scene()
-const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000)
+const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 45, 300000)
 
 camera.position.set(-900, -200, -900)
 
@@ -34,7 +34,7 @@ for(let material of materialArray) {
     material.side = THREE.BackSide
 }
 
-let skyboxGeo = new THREE.BoxBufferGeometry(10000, 10000, 10000)
+let skyboxGeo = new THREE.BoxBufferGeometry(100000, 100000, 100000)
 let skybox = new THREE.Mesh(skyboxGeo, materialArray)
 scene.add(skybox)
 
