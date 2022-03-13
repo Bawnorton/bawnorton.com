@@ -1,51 +1,46 @@
-let pointerX = -1;
-let pointerY = -1;
+import * as THREE from "https://cdn.skypack.dev/three@v0.138.2";
+import { OrbitControls } from "./OrbitControls.js"
 
-document.onmousemove = (event) => {
-    pointerX = event.pageX;
-    pointerY = event.pageY;
+const scene = new THREE.Scene()
+const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 45, 30000)
+
+camera.position.set(-900, -200, -900)
+
+const renderer = new THREE.WebGLRenderer({antialias: true})
+renderer.setSize(window.innerWidth, window.innerHeight)
+document.body.appendChild(renderer.domElement)
+
+const controls = new OrbitControls(camera, renderer.domElement)
+controls.addEventListener('change', renderer)
+controls.minDistance = 500;
+controls.maxDistance = 1500;
+
+let materialArray = []
+let texture_ft = new THREE.TextureLoader().load('skybox/Front.jpg')
+let texture_bk = new THREE.TextureLoader().load('skybox/Back.jpg')
+let texture_up = new THREE.TextureLoader().load('skybox/Up.jpg')
+let texture_dn = new THREE.TextureLoader().load('skybox/Down.jpg')
+let texture_rt = new THREE.TextureLoader().load('skybox/Right.jpg')
+let texture_lf = new THREE.TextureLoader().load('skybox/Left.jpg')
+
+materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}))
+materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}))
+materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}))
+materialArray.push(new THREE.MeshBasicMaterial({map: texture_dn}))
+materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}))
+materialArray.push(new THREE.MeshBasicMaterial({map: texture_lf}))
+
+for(let material of materialArray) {
+    material.side = THREE.BackSide
 }
 
+let skyboxGeo = new THREE.BoxBufferGeometry(10000, 10000, 10000)
+let skybox = new THREE.Mesh(skyboxGeo, materialArray)
+scene.add(skybox)
 
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementsByClassName("nav")[0]
-    const menu = document.getElementsByClassName("menu")[0]
-    const one = document.getElementsByClassName("one")[0]
-    const two = document.getElementsByClassName("two")[0]
-    const three = document.getElementsByClassName("three")[0]
+function animate() {
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+}
 
-    let sideMenu = false
-
-    hamburger.addEventListener('mouseleave', () => {
-        if(!sideMenu) {
-            two.style.width = "40px"
-            three.style.width = "45px"
-        }
-    })
-
-    hamburger.addEventListener('mouseenter', () => {
-        if(!sideMenu) {
-            two.style.width = "50px"
-            three.style.width = "50px"
-        }
-    })
-
-    hamburger.addEventListener("click",  () => {
-        if(sideMenu) {
-            menu.style.left = "-250px"
-            hamburger.style.transform = "rotate(0)"
-            one.style.width = "50px"
-            two.style.width = "40px"
-            three.style.width = "45px"
-        } else {
-            menu.style.left = "0"
-            hamburger.style.transform = "rotate(-90deg)"
-            one.style.width = "35px"
-            two.style.width = "35px"
-            three.style.width = "35px"
-        }
-        sideMenu = !sideMenu;
-    })
-
-    let randColour = `hsl(${Math.random() * 360}, 100%, 50%)`
-})
+animate();
