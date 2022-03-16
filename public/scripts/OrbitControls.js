@@ -27,7 +27,7 @@ class OrbitControls extends THREE.EventDispatcher {
 		this.object = object;
 		this.domElement = domElement;
 		this.domElement.style.touchAction = 'none'; // disable touch scroll
-		// Set to false to disable this control
+		// Set too false to disable this control
 
 		this.enabled = true; // "target" sets the location of focus, where the object orbits around
 
