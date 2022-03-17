@@ -1,148 +1,78 @@
 import * as THREE from "https://cdn.skypack.dev/three@v0.138.2"
 import {OrbitControls} from "./OrbitControls.js"
+import {CSS3DObject, CSS3DRenderer} from "./CSS3DObject.js";
 
 const scene = new THREE.Scene()
-const raycaster = new THREE.Raycaster()
 const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 45, 10000)
-const renderer = new THREE.WebGLRenderer({antialias: true})
+const renderer = new CSS3DRenderer()
 
-let checkClick = false
-let mouseVector = new THREE.Vector2()
-
-let lastHover = null
-let actionMap = new Map()
+let flipButton, controls, pageDiv, doRotate = false
 
 function init() {
-    camera.position.set(-90, -20, -90)
     renderer.setSize(window.innerWidth, window.innerHeight)
     document.body.appendChild(renderer.domElement)
 
-    const skybox = createSkybox()
-    const controls = initControls(skybox)
-
-    const sphereGeometry = new THREE.SphereGeometry(15, 32, 16)
-    const sphereMaterial = new THREE.MeshBasicMaterial({color: 0xffff00})
-    const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
-    sphere.name = "test"
-
-    let iteration = 0
-
-    actionMap.set(sphere, {
-        hover: () => {
-            sphere.scale.set(1.1, 1.1, 1.1)
-        }, leave: () => {
-            sphere.scale.set(1, 1, 1)
-        }, click: () => {
-            if (iteration === 0) {
-                sphere.material.color.setHex(0x00ffff)
-                iteration = 1
-            } else if (iteration === 1) {
-                sphere.material.color.setHex(0xff00ff)
-                iteration = 2
-            } else if (iteration === 2) {
-                sphere.material.color.setHex(0xffff00)
-                iteration = 0
-            }
-        }
+    window.addEventListener("resize", () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight)
     })
 
-    scene.add(sphere)
-}
+    controls = initControls()
 
-function createSkybox() {
-    let materialArray = []
-    let texture_ft = new THREE.TextureLoader().load('skybox/Front.jpg')
-    let texture_bk = new THREE.TextureLoader().load('skybox/Back.jpg')
-    let texture_up = new THREE.TextureLoader().load('skybox/Up.jpg')
-    let texture_dn = new THREE.TextureLoader().load('skybox/Down.jpg')
-    let texture_rt = new THREE.TextureLoader().load('skybox/Right.jpg')
-    let texture_lf = new THREE.TextureLoader().load('skybox/Left.jpg')
+    let div = document.createElement('div')
+    let iframe = document.createElement('iframe')
+    iframe.src = './page.html'
+    div.appendChild(iframe)
+    document.body.appendChild(div)
 
-    materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}))
-    materialArray.push(new THREE.MeshBasicMaterial({map: texture_bk}))
-    materialArray.push(new THREE.MeshBasicMaterial({map: texture_up}))
-    materialArray.push(new THREE.MeshBasicMaterial({map: texture_dn}))
-    materialArray.push(new THREE.MeshBasicMaterial({map: texture_rt}))
-    materialArray.push(new THREE.MeshBasicMaterial({map: texture_lf}))
+    pageDiv = new CSS3DObject(div)
+    let distance = window.innerHeight / (2 * Math.tan(camera.fov * Math.PI / 360))
 
-    for(let material of materialArray) {
-        material.side = THREE.BackSide
+    pageDiv.position.set(0, 0, -distance)
+
+    controls.target.copy(pageDiv.position)
+    controls.update()
+
+    scene.add(pageDiv)
+
+    flipButton = document.createElement("button")
+    flipButton.id = "flipbutton"
+    flipButton.style.display = "none"
+    document.body.appendChild(flipButton)
+
+    flipButton.onclick = () => {
+        doRotate = true
+        console.log("test")
     }
-
-    let skyboxGeo = new THREE.BoxBufferGeometry(6000, 6000, 6000)
-    let skybox = new THREE.Mesh(skyboxGeo, materialArray)
-    skybox.name = "ignore"
-    skybox.position.set(camera.position.x, camera.position.y, camera.position.z)
-    scene.add(skybox)
-    
-    return skybox
 }
 
-function initControls(skybox) {
+function initControls() {
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enablePan = false
+    controls.maxPolarAngle = Math.PI/2
+    controls.minPolarAngle = Math.PI/2
     controls.maxDistance = 1400
     controls.minDistance = 70
 
-    controls.addEventListener('change', () => {
-        skybox.position.set(camera.position.x, camera.position.y, camera.position.z)
-    })
-    
     return controls
 }
 
-init()
-
-document.addEventListener('mousemove', (event) => {
-    mouseVector.x = (event.clientX / window.innerWidth) * 2 - 1;
-    mouseVector.y = -(event.clientY / window.innerHeight) * 2 + 1;
+document.addEventListener("DOMContentLoaded", () => {
+    init()
 })
 
-document.addEventListener('mousedown', () => {
-    checkClick = true
-})
 
-function getObject(intersects) {
-    if(intersects.length > 0) {
-        let object = intersects[0].object
-        if(object && object.name && object.name !== "ignore") {
-            return object
+function animate() {
+    requestAnimationFrame(animate)
+    if(doRotate) {
+        pageDiv.rotateY(Math.PI / 180)
+        console.log(pageDiv.rotation.y)
+        if (Math.abs(pageDiv.rotation.y) <= 0.01) {
+            doRotate = false
         }
     }
-}
-
-function hoverObject(intersects) {
-    let object = getObject(intersects)
-    for(let actionable of actionMap.keys()) {
-        if (object === actionable) {
-            actionMap.get(actionable).hover()
-        } else if (lastHover === actionable) {
-            actionMap.get(actionable).leave()
-        }
-        lastHover = object
-    }
-}
-
-function clickObject(intersects) {
-    let object = getObject(intersects)
-    if(object) {
-        actionMap.get(object).click()
-    }
-}
-
-function render() {
-    raycaster.setFromCamera(mouseVector, camera)
-    let intersects = raycaster.intersectObjects(scene.children, true)
-    if(checkClick) {
-        clickObject(intersects)
-        checkClick = false
-    }
-    hoverObject(intersects)
     renderer.render(scene, camera)
 }
 
-function animate() {
-    render()
-    requestAnimationFrame(animate)
-}
 animate()

@@ -1,3 +1,4 @@
 package.json
 package-lock.json
 firebase-debug.log
+node_modules
