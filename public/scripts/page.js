@@ -1,5 +1,3 @@
-// import { flipButton } from "./index.js";
-
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementsByClassName("nav")[0]
     const menu = document.getElementsByClassName("menu")[0]

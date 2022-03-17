@@ -22,7 +22,7 @@ function init() {
 
     let div = document.createElement('div')
     let iframe = document.createElement('iframe')
-    iframe.src = './page.html'
+    iframe.src = './html/page.html'
     div.appendChild(iframe)
     document.body.appendChild(div)
 
@@ -75,7 +75,6 @@ function animate() {
             pageDiv.rotation.y = 0
             let iZoom = setInterval(() => {
                 pageDiv.position.z += 5
-                console.log(pageDiv.position.z, distance)
                 if (pageDiv.position.z >= -distance) {
                     clearInterval(iZoom)
                 }
