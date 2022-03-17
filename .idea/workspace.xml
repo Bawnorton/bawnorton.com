@@ -5,25 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a813469d-7c6a-45b2-9fa5-d96211f4533c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/page.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/html/page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/flip.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/scripts/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/MovieSync.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/MovieSync.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/me.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/me.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/scripts/OrbitControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/OrbitControls.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/skybox/Back.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/skybox/Back.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/skybox/Down.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/skybox/Down.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/skybox/Front.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/skybox/Front.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/skybox/Left.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/skybox/Left.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/skybox/Right.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/skybox/Right.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/skybox/Up.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/skybox/Up.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/CSS3DObject.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +112,7 @@
       <workItem from="1647053684055" duration="638000" />
       <workItem from="1647131795023" duration="12323000" />
       <workItem from="1647368038898" duration="7000" />
-      <workItem from="1647368972381" duration="41347000" />
+      <workItem from="1647368972381" duration="43583000" />
     </task>
     <servers />
   </component>
