@@ -40,6 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
     flipAnchor.addEventListener('click', () => {
-        window.parent.document.getElementById('flipbutton').click()
+        window.parent.document.getElementById('reciever').click()
     })
 })

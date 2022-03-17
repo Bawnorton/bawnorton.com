@@ -430,7 +430,7 @@ class OrbitControls extends THREE.EventDispatcher {
 
 		}
 
-		this.dIn = function dollyIn( dollyScale ) {
+		function dollyIn( dollyScale ) {
 
 			if ( scope.object.isPerspectiveCamera ) {
 
