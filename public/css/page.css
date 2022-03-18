@@ -1,19 +1,32 @@
 :root {
-    --colour-dark: #0E0B16FF;
-    --colour-text: #E7DFDD;
+    --shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
+}
+
+html {
+    height: 100%;
+}
+
+.parallax {
+    background-image: url("../images/me.jpg");
+    height: 100%;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media only screen and (max-device-width: 1024px) {
+    .parallax {
+        background-attachment: scroll;
+    }
 }
 
 body {
-    background: var(--colour-dark);
+    background: #ffffff;
     color: white;
-    font-family: Helvetica, Arial, sans-serif;
+    font: 400 20px/1.8 "Lato", sans-serif;
     margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-iframe {
-    display: none;
+    height: 100vh;
 }
 
 .right {
@@ -22,41 +35,47 @@ iframe {
     right: 30px;
     top: 2em;
     z-index: 2;
-}
-.right a {
     height: 100%;
 }
 
-.right a img {
-    cursor: pointer;
-    max-height: 50px;
-    margin-right: 30px;
-}
-
-.right a i {
+.right a {
     font-size: 50px;
+    text-shadow: var(--shadow);
 }
 
 .content {
-    width: 100%;
+    background-color: #ffffff;
+    padding: 20px;
+    height: 20vh;
     top: 0;
-    margin-top: 5%;
+}
+
+.content h2 {
+    letter-spacing: 5px;
+    text-transform: uppercase;
     text-align: center;
-    color: white;
-    /*display: none;*/
+    font: 25px "Lato", sans-serif;
+    color: #111;
 }
 
-.content div {
-    position: fixed;
-    left: 50%;
-    width: 500px;
-    margin-left: -250px;
+.content p {
+    color: #777;
+    padding: 50px 80px;
+    text-align: justify;
 }
 
-.content img {
+.name {
     position: absolute;
-    top: 0;
     left: 0;
+    top: 30%;
+    font-size: 2.5vw;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: var(--shadow);
+}
+
+#background {
     max-width: 100%;
 }
 
@@ -87,17 +106,18 @@ iframe {
     padding-left: 40px;
     transition: 0.4s;
     background-color: rgba(0, 0, 0, 0.7);
-    color: var(--colour-text);
+    color: white;
     z-index: 1;
 }
 
 .menu a {
-    color: var(--colour-text);
+    color: white;
     text-decoration: none;
 }
 
 .nav {
     position: fixed;
+    top: 0;
     width: 50px;
     display: flex;
     margin: 2em 0 0 2em;
@@ -112,6 +132,7 @@ iframe {
     margin: 6px;
     border-radius: 25px;
     transition: 0.3s;
+    box-shadow: var(--shadow);
 }
 
 .one {

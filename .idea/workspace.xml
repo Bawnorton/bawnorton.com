@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a813469d-7c6a-45b2-9fa5-d96211f4533c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/images/me_bw.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/page.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/html/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/html/page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/flip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/skybox/Back.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/skybox/Down.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/skybox/Front.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/skybox/Left.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/skybox/Right.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/skybox/Up.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/CSS3DObject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/OrbitControls.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/scripts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/scripts/page.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,11 +74,11 @@
       <recent name="$PROJECT_DIR$/public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images" />
+      <recent name="$PROJECT_DIR$/public/css" />
       <recent name="$PROJECT_DIR$/public/html" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/public/css" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,7 +117,7 @@
       <workItem from="1647131795023" duration="12323000" />
       <workItem from="1647368038898" duration="7000" />
       <workItem from="1647368972381" duration="47410000" />
-      <workItem from="1647545993462" duration="10908000" />
+      <workItem from="1647545993462" duration="22907000" />
     </task>
     <servers />
   </component>
