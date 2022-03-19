@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburger.addEventListener("click",  () => {
         if(sideMenu) {
-            menu.style.left = "-250px"
+            menu.style.left = "-350px"
             hamburger.style.transform = "rotate(0)"
             one.style.width = "50px"
             two.style.width = "40px"
