@@ -1,7 +1,0 @@
-{
-  "projects": {
-    "default": "bawnorton",
-    "staging": "bawnorton"
-  },
-  "targets": {}
-}
