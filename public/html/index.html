@@ -4,42 +4,89 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/page.css">
-        <title>bawnorton</title>
+        <title>Bawnorton</title>
         <script src="https://kit.fontawesome.com/0e7b158b7d.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="parallax">
-            <div class="name">
-                <h1>— Ben Norton —</h1>
+        <div id="page1">
+            <div class="parallax" style="background-image: url('../images/me.jpg');">
+                <div class="pagetitle">
+                    <h1>— Ben Norton —</h1>
+                </div>
+            </div>
+            <div class="downarrow">
+                <i class="icon fa fa-chevron-down" style="color: white; background-color: transparent;"></i>
+            </div>
+            <div class="content">
+                <div class="desktop">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../images/me_bw.jpg" alt="">
+                            </td>
+                            <td style="vertical-align: top">
+                                <h2>About Me</h2>
+                                <p>I am a 19-year-old full-stack developer, who is currently studying for a Bachelor's of Computer Science at <a href="https://www.ubc.ca/" target="_blank">UBC</a>.</p>
+                                <p>I have been programming for over 9 years, and am knowledgeable in
+                                    <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=java&sort=" target="_blank">Java</a>,
+                                    <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=python&sort=" target="_blank">Python</a>,
+                                    <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=swift&sort=" target="_blank">Swift</a> and
+                                    <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=javascript&sort=" target="_blank">JavaScript</a>.
+                                    Most of my programming knowledge is self-taught; consequently I am able to pick up new
+                                    concepts, languages and libraries with realtive ease.</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mobile">
+                    <h2>About Me</h2>
+                    <img src="../images/me_bw.jpg" alt="">
+                    <p>I am a 19-year-old full-stack developer, who is currently studying for a Bachelor's of Computer Science at <a href="https://www.ubc.ca/" target="_blank">UBC</a>.</p>
+                    <p>I have been programming for over 9 years, and am knowledgeable in
+                        <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=java&sort=" target="_blank">Java</a>,
+                        <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=python&sort=" target="_blank">Python</a>,
+                        <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=swift&sort=" target="_blank">Swift</a>and
+                        <a href="https://github.com/Benjamin-Norton?tab=repositories&q=&type=&language=javascript&sort=" target="_blank">JavaScript</a>.
+                        Most of my programming knowledge is self-taught; consequently I am able to pick up new
+                        concepts, languages and libraries with realtive ease.</p>
+                </div>
             </div>
         </div>
-        <div class="content">
-            <div class="desktop">
-                <table>
-                    <tr>
-                        <td>
-                            <img src="../images/me_bw.jpg" alt="">
-                        </td>
-                        <td>
-                            <h2>About Me</h2>
-                            <p>Ben is a 19-year-old full-stack developer studying for a Bachelor's of Computer Science at UBCO. </p>
-                            <p>He has been programming for over 9 years, and is knowledgeable in Java, Python, Swift,
-                                C and JavaScript.
-                                Ben's knowledge of programming is mostly self-taught; consequently he is able to pick up new
-                                concepts, languages and libraries with realtive ease.</p>
-                        </td>
-                    </tr>
-                </table>
+        <script type="module" src="../scripts/index.js"></script>
+        <div id="page2">
+            <div class="parallax" style="background-image: url('../images/project_bg.jpg');">
+                <div class="pagetitle">
+                    <h1>— Projects —</h1>
+                </div>
             </div>
-            <div class="mobile">
-                <h2>About Me</h2>
-                <img src="../images/me_bw.jpg" alt="">
-                <p>Ben is a 19-year-old full-stack developer studying for a Bachelor's of Computer Science at UBCO. </p>
-                <p>He has been programming for over 9 years, and is knowledgeable in Java, Python, Swift,
-                    C and JavaScript.
-                    Ben's knowledge of programming is mostly self-taught; consequently he is able to pick up new
-                    concepts, languages and libraries with realtive ease.</p>
+            <div class="downarrow">
+                <i class="icon fa fa-chevron-down" style="color: white; background-color: transparent;"></i>
             </div>
+            <div class="content">
+                <div class="desktop">
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="../images/swift.png" alt="">
+                            </td>
+                            <td style="vertical-align: top">
+                                <h2>Swift</h2>
+                                <p>Lorem Ipsum</p>
+                                <p>More stuff</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mobile">
+                    <h2>Swift</h2>
+                    <img src="../images/swift.png" alt="">
+                    <p>Lorem Ipsum</p>
+                    <p>More stuff</p>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <!--            <i class="icon fa fa-toggle-on"></i>-->
         </div>
         <div class="nav">
             <a>
@@ -51,46 +98,55 @@
         <div class="menu">
             <table>
                 <tr>
-                    <td>
-                        <h1>Projects</h1>
+                    <td colspan="2">
+                        <h1>Pages</h1>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span>
-                            <a href="https://github.com/Benjamin-Norton" target="_blank">
-                                <i class="fa-brands fa-github icon"></i>
+                        <div>
+                            <a id="page2anchor">
+                                <i class="icon fa fa-terminal" style="color: white; background-color: black"></i>
                             </a>
-                        </span>
+                            <a id="page1anchor">
+                                <i class="icon fa fa-home" style="color: white; background-color: black"></i>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <h2 id="page2title">Projects</h2>
+                        <h2 id="page1title">Main Page</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h1>Programming</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="https://github.com/Benjamin-Norton" target="_blank">
+                                <i class="icon fa-brands fa-github" style="color: white; background-color: #161B22"></i>
+                            </a>
+                        </div>
                     </td>
                     <td>
                         <h2>Github</h2>
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <span>
-                            <a href="#">
-                                <i class="fa fa-pencil icon"></i>
-                            </a>
-                        </span>
-                    </td>
-                    <td>
-                        <h2 style="text-decoration: line-through;">Art</h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    <td colspan="2">
                         <h1>Contact</h1>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <span>
+                        <div>
                             <a href="https://discordapp.com/users/430678754931507201" target ="_blank">
-                                <i class="icon fa-brands fa-discord"></i>
+                                <i class="icon fa-brands fa-discord" style="color: white; background-color: #5663F7"></i>
                             </a>
-                        </span>
+                        </div>
                     </td>
                     <td>
                         <h2>Discord</h2>
@@ -98,11 +154,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>
+                        <div>
                             <a href="https://twitter.com/benjamin_norton" target="_blank">
-                                <i class="icon fa-brands fa-twitter"></i>
+                                <i class="icon fa-brands fa-twitter" style="color: #F5F8FA; background-color: #1DA1F2"></i>
                             </a>
-                        </span>
+                        </div>
                     </td>
                     <td>
                         <h2>Twitter</h2>
@@ -110,11 +166,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>
+                        <div>
                             <a href="https://www.linkedin.com/in/benjamin-norton-41575922b/" target="_blank">
-                                <i class="icon fa-brands fa-linkedin"></i>
+                                <i class="icon fa-brands fa-linkedin" style="color: white; background-color: #2867B2"></i>
                             </a>
-                        </span>
+                        </div>
                     </td>
                     <td>
                         <h2>LinkedIn</h2>
@@ -122,11 +178,11 @@
                 </tr>
                 <tr>
                     <td>
-                        <span>
+                        <div>
                             <a href="mailto:inquire@bawnorton.com" target="_blank">
-                                <i class="icon fa fa-envelope"></i>
+                                <i class="icon fa fa-envelope" style="color: white; background-color: #1B9BF5"></i>
                             </a>
-                        </span>
+                        </div>
                     </td>
                     <td>
                         <h2>Email</h2>
@@ -134,11 +190,5 @@
                 </tr>
             </table>
         </div>
-<!--        <div class="right">-->
-<!--            <a href="https://github.com/Benjamin-Norton" target="_blank">-->
-<!--                <i class="fab icon">&#xf09b;</i>-->
-<!--            </a>-->
-<!--        </div>-->
-        <script type="module" src="../scripts/index.js"></script>
     </body>
 </html>

@@ -2,25 +2,58 @@
     --shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
 }
 
-html {
-    height: 100%;
-}
-
 body {
-    background: #ffffff;
-    color: white;
     font: 400 20px/1.8 "Lato", sans-serif;
     margin: 0;
-    height: 100vh;
+    overflow-x: hidden;
 }
 
+#page1, #page2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#page2 {
+    display: none;
+}
+
+
 .parallax {
-    background-image: url("../images/me.jpg");
+    position: relative;
     height: 100%;
     background-attachment: fixed;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.pagetitle {
+    position: absolute;
+    top: 30vh;
+    font-size: max(20px, 2.5vw);
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: var(--shadow);
+}
+
+.downarrow {
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    bottom: 5vh;
+    text-shadow: var(--shadow);
+    transition: bottom 1.25s ease-in-out;
+}
+
+.downarrow .icon {
+    font-size: max(40px, 5vw);
 }
 
 .mobile {
@@ -54,17 +87,19 @@ body {
 }
 
 .content {
+    position: relative;
     background-color: #ffffff;
     padding: 20px;
-    height: 20vh;
     top: 0;
 }
+
 
 .content img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 500px;
+    max-height: 400px;
+    border-radius: 20px;
 }
 
 .content h2 {
@@ -82,30 +117,40 @@ body {
     text-align: left;
 }
 
-.name {
-    position: absolute;
-    left: 0;
-    top: 30%;
-    font-size: max(20px, 2.5vw);
-    width: 100%;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: var(--shadow);
+.content p a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    color: #585858;
 }
 
-#background {
-    max-width: 100%;
+.content p a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 7px;
+    left: 0;
+    background-color: #585858;
+    transform-origin: top;
+    transition: transform 0.25s ease-out;
+}
+
+.content p a:hover:after {
+    transform: scaleX(1);
+    transform-origin: top;
 }
 
 .icon {
-    margin: 0 10px 0 0;
-    font-size: 48px;
-    color: white;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 40px;
+    height: 1.25em;
+    width: 1.5em;
+    padding-top: 0.25em;
     transition: 0.4s;
-}
-
-.icon:hover{
-    font-size: 60px;
 }
 
 .wrapper {
@@ -115,7 +160,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: left;
-    z-index: 2;
+    z-index: 3;
 }
 
 .menu {
@@ -130,12 +175,18 @@ body {
     transition: 0.4s;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    z-index: 1;
+    z-index: 2;
 }
 
-.menu span {
-    float: right;
-    padding-right: 20px;
+.menu div {
+    width: 60px;
+    transition: 0.4s;
+    margin-right: 30px;
+}
+
+.menu div:hover {
+    width: 40px;
+    margin-left: 10px;
 }
 
 .menu h2 {
@@ -144,11 +195,20 @@ body {
 
 .menu h1 {
     font: bold 30px "Lato", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .menu a {
-    color: white;
     text-decoration: none;
+}
+
+#page1anchor {
+    display: none;
+}
+
+#page1title {
+    display: none;
 }
 
 .nav {
@@ -158,7 +218,7 @@ body {
     display: flex;
     margin: 2em 0 0 2em;
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
     transition: 0.4s;
 }
 
