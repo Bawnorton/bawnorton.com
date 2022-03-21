@@ -5,6 +5,10 @@
     --transition-amount: 0s;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font: 400 20px/1.8 "Lato", sans-serif;
     margin: 0;
