@@ -82,8 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1250)
         }, 2500)
 
-        document.addEventListener("scroll",  () => {
-            downArrow.style.opacity = 1 - (window.scrollY * 6 / window.innerHeight)
+        page1.addEventListener("scroll",  () => {
+            downArrow.style.opacity = 1 - (page1.scrollTop * 6 / window.innerHeight)
+        })
+        page2.addEventListener("scroll",  () => {
+            downArrow.style.opacity = 1 - (page2.scrollTop * 6 / window.innerHeight)
         })
     }
 })
