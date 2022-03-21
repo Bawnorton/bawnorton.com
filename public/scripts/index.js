@@ -8,10 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const page1 = document.getElementById("page1")
     const page2 = document.getElementById("page2")
-    const page1title = document.getElementById("page1title")
-    const page2title = document.getElementById("page2title")
+
     const page1anchor = document.getElementById("page1anchor")
     const page2anchor = document.getElementById("page2anchor")
+
+    const leftAnchor = document.getElementById("leftanchor")
+    const rightAnchor = document.getElementById("rightanchor")
 
     let sideMenu = false
 
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburger.addEventListener("click",  () => {
         if(sideMenu) {
-            menu.style.left = "-350px"
+            menu.style.left = "-270px"
             hamburger.style.transform = "rotate(0)"
             one.style.width = "50px"
             two.style.width = "40px"
@@ -46,23 +48,31 @@ document.addEventListener('DOMContentLoaded', () => {
         sideMenu = !sideMenu;
     })
 
-    page1anchor.addEventListener("click", () => {
-        page2.style.display = "none"
-        page1anchor.style.display = "none"
-        page1title.style.display = "none"
-        page1.style.display = "block"
-        page2anchor.style.display = "block"
-        page2title.style.display = "block"
-    })
+    function movePage1() {
+        document.documentElement.style.setProperty("--page1-offset", "-100vw")
+        document.documentElement.style.setProperty("--page2-offset", "0vw")
+        document.documentElement.style.setProperty("--transition-amount", "1s")
+        setTimeout(() => {
+            page2.style.overflowY = "scroll"
+            document.documentElement.style.setProperty("--transition-amount", "0s")
+        }, 1000)
+    }
 
-    page2anchor.addEventListener("click", () => {
-        page2.style.display = "block"
-        page1anchor.style.display = "block"
-        page1title.style.display = "block"
-        page1.style.display = "none"
-        page2anchor.style.display = "none"
-        page2title.style.display = "none"
-    })
+    function movePage2() {
+        page2.style.overflowY = "hidden"
+        document.documentElement.style.setProperty("--page1-offset", "0vw")
+        document.documentElement.style.setProperty("--page2-offset", "100vw")
+        document.documentElement.style.setProperty("--transition-amount", "1s")
+        setTimeout(() => {
+            document.documentElement.style.setProperty("--transition-amount", "0s")
+        }, 1000)
+    }
+
+    rightAnchor.addEventListener("click", movePage1)
+    page2anchor.addEventListener("click", movePage1)
+    page1anchor.addEventListener("click", movePage2)
+    leftAnchor.addEventListener("click", movePage2)
+
 
     for(let downArrow of downArrows) {
         setInterval(() => {

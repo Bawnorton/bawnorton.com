@@ -1,5 +1,8 @@
 :root {
     --shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
+    --page1-offset: 0;
+    --page2-offset: 100vw;
+    --transition-amount: 0s;
 }
 
 body {
@@ -9,6 +12,11 @@ body {
 }
 
 #page1, #page2 {
+    transition: left var(--transition-amount) ease;
+    overflow-x: hidden;
+}
+
+#page1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -19,27 +27,59 @@ body {
 }
 
 #page2 {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: var(--page2-offset);
+    width: 100vw;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
 }
-
 
 .parallax {
     position: relative;
     height: 100%;
     background-attachment: fixed;
-    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    transition: left 1s ease;
+}
+
+#page1 .parallax {
+    background-position: center;
+}
+
+#page2 .parallax {
+    background-position: center;
 }
 
 .pagetitle {
     position: absolute;
-    top: 30vh;
+    top: 30%;
     font-size: max(20px, 2.5vw);
     width: 100%;
     text-align: center;
+    white-space: nowrap;
     color: #ffffff;
     text-shadow: var(--shadow);
+    transition: left 1s ease;
+}
+
+.caption {
+    position: absolute;
+    top: 30%;
+    font-size: max(15px, 2vw);
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    color: #ffffff;
+    text-shadow: var(--shadow);
+    transition: left 1s ease;
+}
+
+#page1 .pagetitle {
+    left: var(--page1-offset);
 }
 
 .downarrow {
@@ -49,7 +89,11 @@ body {
     justify-content: center;
     bottom: 5vh;
     text-shadow: var(--shadow);
-    transition: bottom 1.25s ease-in-out;
+    transition: bottom 1.25s ease-in-out, left 1s ease;
+}
+
+#page1 .downarrow {
+    left: var(--page1-offset);
 }
 
 .downarrow .icon {
@@ -72,7 +116,6 @@ body {
     }
 }
 
-
 .right {
     display: inline-flex;
     position: fixed;
@@ -82,8 +125,14 @@ body {
 }
 
 .right a {
-    font-size: 50px;
+    padding: 0;
+    color: white;
     text-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.right a:hover {
+    color: darkgrey;
 }
 
 .content {
@@ -91,14 +140,19 @@ body {
     background-color: #ffffff;
     padding: 20px;
     top: 0;
+    transition: 1s ease;
 }
 
+#page1 .content {
+    left: var(--page1-offset);
+}
 
 .content img {
     display: block;
     margin-left: auto;
+    margin-top: 20px;
     margin-right: auto;
-    max-height: 400px;
+    max-width: 350px;
     border-radius: 20px;
 }
 
@@ -112,7 +166,7 @@ body {
 
 .content p {
     color: #777;
-    padding: 20px 5vw;
+    padding: 10px 5vw;
     font: 400 max(20px, 1.5vw)/1.8 "Lato", sans-serif;
     text-align: left;
 }
@@ -146,7 +200,7 @@ body {
     display: inline-block;
     text-align: center;
     border-radius: 10px;
-    font-size: 40px;
+    font-size: 30px;
     height: 1.25em;
     width: 1.5em;
     padding-top: 0.25em;
@@ -166,8 +220,8 @@ body {
 .menu {
     position: fixed;
     top: 0;
-    left: -350px;
-    width: 250px;
+    left: -270px;
+    width: 180px;
     height: 100%;
     padding-left: 40px;
     padding-right: 40px;
@@ -178,37 +232,34 @@ body {
     z-index: 2;
 }
 
-.menu div {
-    width: 60px;
+.icons {
+    width: 50px;
     transition: 0.4s;
-    margin-right: 30px;
+    cursor: pointer;
 }
 
-.menu div:hover {
-    width: 40px;
+.names {
+    width: 130px;
     margin-left: 10px;
 }
 
+.icons:hover {
+    width: 40px;
+    padding-left: 10px;
+}
+
 .menu h2 {
-    font: bold 25px "Lato", sans-serif;
+    font: bold 20px "Lato", sans-serif;
 }
 
 .menu h1 {
-    font: bold 30px "Lato", sans-serif;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    font: bold 25px "Lato", sans-serif;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 
 .menu a {
     text-decoration: none;
-}
-
-#page1anchor {
-    display: none;
-}
-
-#page1title {
-    display: none;
 }
 
 .nav {
