@@ -81,8 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty("--page2-offset", dis2)
         if (isMobile) {
             ele1.style.display = "none"
-            rightAnchor.style.display = "none"
-            leftAnchor.style.display = "flex"
+            if(ele1 === page1) {
+                rightAnchor.style.display = "none"
+                leftAnchor.style.display = "flex"
+            } else {
+                rightAnchor.style.display = "flex"
+                leftAnchor.style.display = "none"
+            }
             ele2.style.display = "block"
             ele2.style.overflowY = "scroll"
             return
@@ -134,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             downArrow.style.opacity = 1 - (page2.scrollTop * 6 / window.innerHeight)
         })
     }
-    
+
 })
 
 function preloadImages(array) {
