@@ -151,16 +151,16 @@ function preloadImages(array) {
 }
 
 preloadImages([
-    "moviesync.jpg",
-    "swift.png",
-    "python.jpg",
-    "project_bg.jpg",
-    "me_bw.jpg",
-    "me.jpg",
-    "mcmodding.png",
-    "languages.jpg",
-    "js.jpg",
-    "java.jpg",
-    "fitapp.jpg",
-    "discord.jpg"
+    "moviesync.webp",
+    "swift.webp",
+    "python.webp",
+    "project_bg.webp",
+    "me_bw.webp",
+    "me.webp",
+    "mcmodding.webp",
+    "languages.webp",
+    "js.webp",
+    "java.webp",
+    "fitapp.webp",
+    "discord.webp"
 ])
