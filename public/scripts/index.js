@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let sideMenu = false
     let transitioning = false
 
+    let isMobile = getComputedStyle(document.getElementsByClassName("parallax")[0]).getPropertyValue("background-attachment") !== "fixed"
+
+
     hamburger.addEventListener('mouseleave', () => {
         if(!sideMenu) {
             two.style.width = "40px"
@@ -52,8 +55,9 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     darkModeSwitch.addEventListener('click', () => {
-        let value = document.documentElement.style.getPropertyValue("--colour-1")
-        if(value === "white" || value === "") {
+        let docStyle = getComputedStyle(document.body)
+        let value = docStyle.getPropertyValue("color")
+        if(value === "rgb(255, 255, 255)") {
             document.documentElement.style.setProperty("--colour-1", "black")
             document.documentElement.style.setProperty("--colour-2", "#464646")
             document.documentElement.style.setProperty("--colour-3", "#A7A7A7")
@@ -61,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.style.setProperty("--colour-5", "rgba(255, 255, 255, 0.7)")
             document.documentElement.style.setProperty("--shadow", "0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226)")
         } else {
-            document.documentElement.style.setProperty("--colour-1", "white")
+            document.documentElement.style.setProperty("--colour-1", "rgb(255, 255, 255)")
             document.documentElement.style.setProperty("--colour-2", "#c7c7c7")
             document.documentElement.style.setProperty("--colour-3", "#585858")
             document.documentElement.style.setProperty("--colour-4", "#111")
@@ -70,16 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    function isMobile() {
-        return document.getElementsByClassName("parallax")[0].style.backgroundAttachment === "scroll"
-    }
-
     function movePage1() {
         if(transitioning) return;
         document.documentElement.style.setProperty("--page1-offset", "-100vw")
         document.documentElement.style.setProperty("--page2-offset", "0vw")
-        if (isMobile()) {
-            console.log("a")
+        if (isMobile) {
             page1.style.display = "none"
             page2.style.display = "block"
             page2.style.overflowY = "scroll"
@@ -99,8 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
         page2.style.overflowY = "hidden"
         document.documentElement.style.setProperty("--page1-offset", "0vw")
         document.documentElement.style.setProperty("--page2-offset", "100vw")
-        if (isMobile()) {
-            console.log("b")
+        if (isMobile) {
             page1.style.display = "block"
             page2.style.display = "none"
             return
