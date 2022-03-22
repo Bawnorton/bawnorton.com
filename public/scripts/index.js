@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const one = document.getElementsByClassName("one")[0]
     const two = document.getElementsByClassName("two")[0]
     const three = document.getElementsByClassName("three")[0]
-    const downArrows = document.getElementsByClassName("downarrow")
 
     const page1 = document.getElementById("page1")
     const page2 = document.getElementById("page2")
+
+    const downArrows = document.getElementsByClassName("downarrow")
 
     const page1anchor = document.getElementById("page1anchor")
     const page2anchor = document.getElementById("page2anchor")
@@ -115,9 +116,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     rightAnchor.addEventListener("click", movePage1)
-    page2anchor.addEventListener("click", movePage1)
+    page2anchor.addEventListener("click", movePage2)
     page1anchor.addEventListener("click", movePage2)
     leftAnchor.addEventListener("click", movePage2)
+
+    leftAnchor.addEventListener("click", () => {
+        page1.getElementsByClassName("downarrow")[0].style.opacity = 1 - (page1.scrollTop * 6 / window.innerHeight)
+    })
+    rightAnchor.addEventListener("click", () => {
+        page2.getElementsByClassName("downarrow")[0].style.opacity = 1 - (page2.scrollTop * 6 / window.innerHeight)
+    })
 
     for(let downArrow of downArrows) {
         setInterval(() => {
