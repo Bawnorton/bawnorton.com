@@ -185,6 +185,7 @@ body {
     margin-top: 20px;
     margin-right: auto;
     max-width: 350px;
+    width: 350px;
     border-radius: 20px;
     box-shadow: var(--shadow);
 }
