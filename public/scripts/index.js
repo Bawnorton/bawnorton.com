@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
             downArrow.style.opacity = 1 - (page2.scrollTop * 6 / window.innerHeight)
         })
     }
+    
 })
 
 function preloadImages(array) {
