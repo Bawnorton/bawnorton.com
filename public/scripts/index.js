@@ -80,6 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty("--page2-offset", "0vw")
         if (isMobile) {
             page1.style.display = "none"
+            rightAnchor.style.display = "none"
+            leftAnchor.style.display = "flex"
             page2.style.display = "block"
             page2.style.overflowY = "scroll"
             return
@@ -99,6 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
         document.documentElement.style.setProperty("--page1-offset", "0vw")
         document.documentElement.style.setProperty("--page2-offset", "100vw")
         if (isMobile) {
+            rightAnchor.style.display = "flex"
+            leftAnchor.style.display = "none"
             page1.style.display = "block"
             page2.style.display = "none"
             return
