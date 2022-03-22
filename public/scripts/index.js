@@ -20,9 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let sideMenu = false
     let transitioning = false
 
-    let isMobile = true;
-    // let isMobile = getComputedStyle(document.getElementsByClassName("parallax")[0]).getPropertyValue("background-attachment") !== "fixed"
-
+    let isMobile = getComputedStyle(document.getElementsByClassName("parallax")[0]).getPropertyValue("background-attachment") !== "fixed"
 
     hamburger.addEventListener('mouseleave', () => {
         if(!sideMenu) {

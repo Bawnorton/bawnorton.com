@@ -125,6 +125,7 @@ body {
 @media only screen and (max-device-width: 1024px) {
     .parallax {background-attachment: scroll;}
     #page2 {display: none}
+    #leftanchor {display: none}
 }
 
 .right {
