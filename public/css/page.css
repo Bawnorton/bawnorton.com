@@ -71,7 +71,8 @@ body {
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    text-shadow: var(--shadow);
+    text-shadow: 0 0 1vw rgb(29, 29, 29);
+    color: white;
     transition: left var(--transition-amount) ease, color 0.5s ease;
 }
 
@@ -82,7 +83,8 @@ body {
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    text-shadow: var(--shadow);
+    text-shadow: 0 0 1vw rgb(29, 29, 29);
+    color: white;
     transition: left var(--transition-amount) ease, color 0.5s ease;
 }
 
@@ -96,8 +98,8 @@ body {
     width: 100vw;
     justify-content: center;
     bottom: 5vh;
-    text-shadow: var(--shadow);
-    color: var(--colour-1);
+    text-shadow: 0 0 1vw rgb(29, 29, 29);
+    color: white;
     background-color: transparent;
     transition: bottom 1.25s ease-in-out, left var(--transition-amount) ease;
 }
@@ -136,7 +138,8 @@ body {
     display: flex;
     top: 1.8em;
     z-index: 2;
-    text-shadow: var(--shadow);
+    text-shadow: 0 0 1vw rgb(29, 29, 29);
+    color: white;
     cursor: pointer;
     transition: right var(--transition-amount) ease;
 }
@@ -258,7 +261,8 @@ body {
     padding-right: 40px;
     padding-top: 70px;
     transition: 0.4s;
-    background-color: var(--colour-5);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 2;
 }
 
@@ -307,11 +311,11 @@ body {
 
 .nav div {
     height: 6px;
-    background-color: var(--colour-1);
+    background-color: white;
     margin: 6px;
     border-radius: 25px;
     transition: 0.3s;
-    box-shadow: var(--shadow);
+    box-shadow: 0 0 1vw rgb(29, 29, 29);
 }
 
 .one {
