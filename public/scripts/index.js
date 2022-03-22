@@ -74,57 +74,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    function movePage1() {
+    function movePage(ele1, ele2, dis1, dis2) {
         if(transitioning) return;
-        document.documentElement.style.setProperty("--page1-offset", "-100vw")
-        document.documentElement.style.setProperty("--page2-offset", "0vw")
+        if(ele1 === page2) ele1.style.overflowY = "hidden"
+        document.documentElement.style.setProperty("--page1-offset", dis1)
+        document.documentElement.style.setProperty("--page2-offset", dis2)
         if (isMobile) {
-            page1.style.display = "none"
+            ele1.style.display = "none"
             rightAnchor.style.display = "none"
             leftAnchor.style.display = "flex"
-            page2.style.display = "block"
-            page2.style.overflowY = "scroll"
+            ele2.style.display = "block"
+            ele2.style.overflowY = "scroll"
             return
         }
         document.documentElement.style.setProperty("--transition-amount", "1s")
         transitioning = true
         setTimeout(() => {
             transitioning = false
-            page2.style.overflowY = "scroll"
+            if (ele2 === page2) ele2.style.overflowY = "scroll"
             document.documentElement.style.setProperty("--transition-amount", "0s")
         }, 1000)
+        if(sideMenu) hamburger.click()
+    }
+
+    function movePage1() {
+        movePage(page1, page2, "-100vw", "0vw")
     }
 
     function movePage2() {
-        if(transitioning) return
-        page2.style.overflowY = "hidden"
-        document.documentElement.style.setProperty("--page1-offset", "0vw")
-        document.documentElement.style.setProperty("--page2-offset", "100vw")
-        if (isMobile) {
-            rightAnchor.style.display = "flex"
-            leftAnchor.style.display = "none"
-            page1.style.display = "block"
-            page2.style.display = "none"
-            return
-        }
-        document.documentElement.style.setProperty("--transition-amount", "1s")
-        transitioning = true
-        setTimeout(() => {
-            transitioning = false
-            document.documentElement.style.setProperty("--transition-amount", "0s")
-        }, 1000)
+        movePage(page2, page1, "0vw", "100vw")
     }
 
     rightAnchor.addEventListener("click", movePage1)
-    page2anchor.addEventListener("click", movePage2)
+    page2anchor.addEventListener("click", movePage1)
     page1anchor.addEventListener("click", movePage2)
     leftAnchor.addEventListener("click", movePage2)
 
     leftAnchor.addEventListener("click", () => {
         page1.getElementsByClassName("downarrow")[0].style.opacity = 1 - (page1.scrollTop * 6 / window.innerHeight)
+        if(sideMenu) hamburger.click()
     })
     rightAnchor.addEventListener("click", () => {
         page2.getElementsByClassName("downarrow")[0].style.opacity = 1 - (page2.scrollTop * 6 / window.innerHeight)
+        if(sideMenu) hamburger.click()
     })
 
     for(let downArrow of downArrows) {
