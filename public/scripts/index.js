@@ -15,7 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const leftAnchor = document.getElementById("leftanchor")
     const rightAnchor = document.getElementById("rightanchor")
 
+    const darkModeSwitch = document.getElementById("switch")
+
     let sideMenu = false
+    let transitioning = false
 
     hamburger.addEventListener('mouseleave', () => {
         if(!sideMenu) {
@@ -48,22 +51,64 @@ document.addEventListener('DOMContentLoaded', () => {
         sideMenu = !sideMenu;
     })
 
+    darkModeSwitch.addEventListener('click', () => {
+        let value = document.documentElement.style.getPropertyValue("--colour-1")
+        if(value === "white" || value === "") {
+            document.documentElement.style.setProperty("--colour-1", "black")
+            document.documentElement.style.setProperty("--colour-2", "#464646")
+            document.documentElement.style.setProperty("--colour-3", "#A7A7A7")
+            document.documentElement.style.setProperty("--colour-4", "#E9E9E9")
+            document.documentElement.style.setProperty("--colour-5", "rgba(255, 255, 255, 0.7)")
+            document.documentElement.style.setProperty("--shadow", "0 0 2px rgb(226, 226, 226), 0 0 2px rgb(226, 226, 226)")
+        } else {
+            document.documentElement.style.setProperty("--colour-1", "white")
+            document.documentElement.style.setProperty("--colour-2", "#c7c7c7")
+            document.documentElement.style.setProperty("--colour-3", "#585858")
+            document.documentElement.style.setProperty("--colour-4", "#111")
+            document.documentElement.style.setProperty("--colour-5", "rgba(0, 0, 0, 0.7)")
+            document.documentElement.style.setProperty("--shadow", "0 0 1vw rgb(29, 29, 29)")
+        }
+    })
+
+    function isMobile() {
+        return document.getElementsByClassName("parallax")[0].style.backgroundAttachment === "scroll"
+    }
+
     function movePage1() {
+        if(transitioning) return;
         document.documentElement.style.setProperty("--page1-offset", "-100vw")
         document.documentElement.style.setProperty("--page2-offset", "0vw")
+        if (isMobile()) {
+            console.log("a")
+            page1.style.display = "none"
+            page2.style.display = "block"
+            page2.style.overflowY = "scroll"
+            return
+        }
         document.documentElement.style.setProperty("--transition-amount", "1s")
+        transitioning = true
         setTimeout(() => {
+            transitioning = false
             page2.style.overflowY = "scroll"
             document.documentElement.style.setProperty("--transition-amount", "0s")
         }, 1000)
     }
 
     function movePage2() {
+        if(transitioning) return
         page2.style.overflowY = "hidden"
         document.documentElement.style.setProperty("--page1-offset", "0vw")
         document.documentElement.style.setProperty("--page2-offset", "100vw")
+        if (isMobile()) {
+            console.log("b")
+            page1.style.display = "block"
+            page2.style.display = "none"
+            return
+        }
         document.documentElement.style.setProperty("--transition-amount", "1s")
+        transitioning = true
         setTimeout(() => {
+            transitioning = false
             document.documentElement.style.setProperty("--transition-amount", "0s")
         }, 1000)
     }
@@ -72,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     page2anchor.addEventListener("click", movePage1)
     page1anchor.addEventListener("click", movePage2)
     leftAnchor.addEventListener("click", movePage2)
-
 
     for(let downArrow of downArrows) {
         setInterval(() => {

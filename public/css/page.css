@@ -1,8 +1,13 @@
 :root {
-    --shadow: 0 0 1vw rgba(0, 0, 0, 0.4);
+    --shadow: 0 0 1vw rgb(29, 29, 29);
     --page1-offset: 0;
     --page2-offset: 100vw;
     --transition-amount: 0s;
+    --colour-1: white;
+    --colour-2: #c7c7c7;
+    --colour-3: #585858;
+    --colour-4: #111;
+    --colour-5: rgba(0, 0, 0, 0.7);
 }
 
 html {
@@ -12,6 +17,7 @@ html {
 body {
     font: 400 20px/1.8 "Lato", sans-serif;
     margin: 0;
+    color: var(--colour-1);
     overflow-x: hidden;
 }
 
@@ -47,7 +53,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    transition: left 1s ease;
+    transition: left var(--transition-amount) ease;
 }
 
 #page1 .parallax {
@@ -65,9 +71,8 @@ body {
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    color: #ffffff;
     text-shadow: var(--shadow);
-    transition: left 1s ease;
+    transition: left var(--transition-amount) ease, color 0.5s ease;
 }
 
 .caption {
@@ -77,9 +82,8 @@ body {
     width: 100%;
     text-align: center;
     white-space: nowrap;
-    color: #ffffff;
     text-shadow: var(--shadow);
-    transition: left 1s ease;
+    transition: left var(--transition-amount) ease, color 0.5s ease;
 }
 
 #page1 .pagetitle {
@@ -93,7 +97,9 @@ body {
     justify-content: center;
     bottom: 5vh;
     text-shadow: var(--shadow);
-    transition: bottom 1.25s ease-in-out, left 1s ease;
+    color: var(--colour-1);
+    background-color: transparent;
+    transition: bottom 1.25s ease-in-out, left var(--transition-amount) ease;
 }
 
 #page1 .downarrow {
@@ -115,36 +121,54 @@ body {
 }
 
 @media only screen and (max-device-width: 1024px) {
-    .parallax {
-        background-attachment: scroll;
-    }
+    .parallax {background-attachment: scroll;}
+    #page2 {display: none}
 }
 
 .right {
-    display: inline-flex;
-    position: fixed;
+    position: absolute;
+    width: 200px;
     right: 30px;
-    top: 2em;
-    z-index: 2;
 }
 
 .right a {
-    padding: 0;
-    color: white;
+    position: absolute;
+    display: flex;
+    top: 1.8em;
+    z-index: 2;
     text-shadow: var(--shadow);
     cursor: pointer;
+    transition: right var(--transition-amount) ease;
 }
 
-.right a:hover {
-    color: darkgrey;
+#leftanchor {
+    right: calc(var(--page2-offset) * -1);
 }
+
+#rightanchor {
+    right: var(--page1-offset);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .right a:hover {
+        color: var(--colour-2);
+    }
+}
+
+.right p {
+    font-weight: bold;
+    margin: auto;
+    flex-grow: 1;
+    transition: 0.4s
+}
+
 
 .content {
     position: relative;
-    background-color: #ffffff;
     padding: 20px;
     top: 0;
-    transition: 1s ease;
+    background-color: var(--colour-1);
+    transition: var(--transition-amount) ease, background-color 0.5s ease;
 }
 
 #page1 .content {
@@ -158,6 +182,7 @@ body {
     margin-right: auto;
     max-width: 350px;
     border-radius: 20px;
+    box-shadow: var(--shadow);
 }
 
 .content h2 {
@@ -165,11 +190,11 @@ body {
     text-transform: uppercase;
     text-align: center;
     font: max(25px, 2vw) "Lato", sans-serif;
-    color: #111;
+    color: var(--colour-4);
 }
 
 .content p {
-    color: #777;
+    color: var(--colour-3);
     padding: 10px 5vw;
     font: 400 max(20px, 1.5vw)/1.8 "Lato", sans-serif;
     text-align: left;
@@ -179,25 +204,27 @@ body {
     display: inline-block;
     position: relative;
     text-decoration: none;
-    color: #585858;
+    color: #808080;
 }
 
-.content p a:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: 7px;
-    left: 0;
-    background-color: #585858;
-    transform-origin: top;
-    transition: transform 0.25s ease-out;
-}
+@media (hover: hover) and (pointer: fine) {
+    .content p a:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 7px;
+        left: 0;
+        background-color:#808080;
+        transform-origin: top;
+        transition: transform 0.25s ease-out;
+    }
 
-.content p a:hover:after {
-    transform: scaleX(1);
-    transform-origin: top;
+    .content p a:hover:after {
+        transform: scaleX(1);
+        transform-origin: top;
+    }
 }
 
 .icon {
@@ -227,12 +254,11 @@ body {
     left: -270px;
     width: 180px;
     height: 100%;
-    padding-left: 40px;
+    padding-left: 44px;
     padding-right: 40px;
-    padding-top: 100px;
+    padding-top: 70px;
     transition: 0.4s;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: var(--colour-5);
     z-index: 2;
 }
 
@@ -247,9 +273,11 @@ body {
     margin-left: 10px;
 }
 
-.icons:hover {
-    width: 40px;
-    padding-left: 10px;
+@media (hover: hover) and (pointer: fine) {
+    .icons:hover {
+        width: 40px;
+        padding-left: 10px;
+    }
 }
 
 .menu h2 {
@@ -279,7 +307,7 @@ body {
 
 .nav div {
     height: 6px;
-    background-color: white;
+    background-color: var(--colour-1);
     margin: 6px;
     border-radius: 25px;
     transition: 0.3s;
@@ -298,4 +326,61 @@ body {
 .three {
     transform-origin: top left;
     width: 45px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    top: -25px;
+    right: -110px;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--colour-1);
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--colour-4);
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--colour-1);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #000000;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
