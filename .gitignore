@@ -3,3 +3,6 @@ package-lock.json
 firebase-debug.log
 .firebase
 node_modules
+*/.DS_Store
+.DS_Store
+.idea
