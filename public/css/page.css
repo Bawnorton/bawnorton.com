@@ -12,20 +12,24 @@ body, main {
     background: black;
 }
 
+div::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+div::-webkit-scrollbar-thumb {
+    background: #3f3f3f;
+    border-radius: 10px;
+}
+
 main {
     position: relative;
     transition: transform 0.5s cubic-bezier(.13, .53, .38, .97);
     z-index: 2;
-}
-
-main > article {
-    position: relative;
-    height: 100%;
-    display: none;
-}
-
-main[data-page="home"] > #home {
-    display: block;
 }
 
 h3 {
@@ -38,18 +42,16 @@ h3 {
     text-transform: uppercase;
 }
 
-div::-webkit-scrollbar {
-    width: 6px;
+main > article {
+    position: relative;
+    height: 100%;
+    display: none;
 }
 
-div::-webkit-scrollbar-track {
-    background: transparent;
+main[data-page="home"] > #home {
+    display: block;
 }
 
-div::-webkit-scrollbar-thumb {
-    background: #3f3f3f;
-    border-radius: 10px;
-}
 
 .line-drawing {
     position: absolute;
@@ -61,8 +63,8 @@ div::-webkit-scrollbar-thumb {
 
 .line-drawing > svg {
     position: absolute;
-    width: 90%;
-    height: 90%;
+    width: 80%;
+    height: 80%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -125,6 +127,35 @@ main[data-page="work"] > #work {
     min-width: 0;
     min-height: 0;
     border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .carousel-cell > div {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 3fr 7fr;
+        gap: 40px;
+    }
+
+    .carousel-cell > div > .project-header {
+        grid-row: 1 ;
+    }
+
+    .carousel-cell > div > .project-image {
+        grid-row: 2;
+    }
+
+    .carousel-cell > div > .project-description {
+        grid-row: 3;
+        margin-bottom: 80px;
+    }
+
+    .carousel-cell > div > .project-code {
+        display: none;
+    }
+
+    .carousel-cell > .website > .project-image > img {
+        margin-left: auto;
+    }
 }
 
 .project-image {
@@ -266,6 +297,41 @@ main[data-page="about"] > #about {
     font-size: max(4vw, 40px);
 }
 
+@media only screen and (max-width: 600px) {
+    #about > .carousel-cell > div {
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr 5fr 5fr;
+        gap: 40px;
+    }
+
+    #about > .carousel-cell > div > .project-header {
+        grid-row: 1 ;
+    }
+
+    #about > .carousel-cell > div > .project-image {
+        grid-row: 3;
+    }
+
+    #about > .carousel-cell > div > .project-description {
+        grid-row: 4;
+        margin-bottom: 0;
+    }
+
+    #about > .carousel-cell > div > .project-code {
+        grid-row: 2;
+        display: flex;
+    }
+
+    #about > .carousel-cell > div > .project-code > svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    #about > .carousel-cell > .about > .project-image > img {
+        margin-left: auto;
+    }
+}
+
 main[data-page="contact"] > #contact {
     display: flex;
     justify-content: center;
@@ -344,8 +410,8 @@ main[data-page="contact"] > #contact {
 }
 
 #nav-toggle {
-    height: 5rem;
-    width: 5rem;
+    height: max(5rem, 5vw);
+    width: max(5rem, 5vw);
     position: fixed;
     z-index: 3;
     left: 50%;
@@ -412,6 +478,17 @@ nav {
     z-index: 1;
 }
 
+@media only screen and (max-width: 600px) {
+    body[data-nav="open"] > main {
+        transform: translateY(-70%);
+    }
+
+    nav {
+        bottom: 10vh;
+    }
+}
+
+
 #nav-links {
     display: flex;
     gap: clamp(1rem, 2vw, 2rem);
@@ -421,13 +498,6 @@ nav {
     transition: transform 0.5s cubic-bezier(.13, .53, .38, .97);
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-@media (max-width: 550px) {
-    #nav-links {
-        flex-wrap: nowrap;
-        overflow: auto;
-    }
 }
 
 body[data-nav="open"] > nav > #nav-links {
@@ -450,7 +520,7 @@ body[data-nav="open"] > nav > #nav-links {
 }
 
 #nav-links > .nav-link > .nav-link-image {
-    width: max(22vw, 250px);
+    width: max(22vw, 200px);
     aspect-ratio: 1.8 / 1;
     border-radius: 0.5rem;
     margin-top: 0.75rem;

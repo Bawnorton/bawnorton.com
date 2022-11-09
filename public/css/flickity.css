@@ -82,7 +82,7 @@ https://flickity.metafizzy.co
 }
 
 .flickity-button-icon {
-    fill: rgb(140, 108, 255);
+    fill: var(--color-primary);
 }
 
 .flickity-button-icon:hover {
@@ -137,4 +137,25 @@ https://flickity.metafizzy.co
 
 .flickity-page-dots .dot.is-selected {
     opacity: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .flickity-page-dots {
+        bottom: 140px;
+    }
+
+    .flickity-page-dots .dot {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        margin: 0 8px;
+        background: var(--color-primary);
+        border-radius: 50%;
+        opacity: 0.25;
+        cursor: pointer;
+    }
+
+    .flickity-button {
+        display: none;
+    }
 }
