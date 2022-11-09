@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     new Flickity(work.querySelector(".carousel"), {
         wrapAround: true,
         selectedAttraction: 0.011,
-        friction: 0.2
+        friction: 0.2,
+        dragThreshold: 40
     })
 
     anime({
