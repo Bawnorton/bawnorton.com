@@ -492,7 +492,7 @@ nav {
 
 @media only screen and (max-width:420px) {
     body[data-nav="open"] > main {
-        transform: translateY(-70%);
+        transform: translateY(-80%);
     }
 
     nav {

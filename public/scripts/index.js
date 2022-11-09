@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapAround: true,
         selectedAttraction: 0.011,
         friction: 0.2,
-        dragThreshold: 40
+        dragThreshold: 50
     })
 
     anime({
