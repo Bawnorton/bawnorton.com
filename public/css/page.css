@@ -155,6 +155,10 @@ main[data-page="work"] > #work {
         margin-bottom: 80px;
     }
 
+    .carousel-cell > div > .project-description > p {
+        font-size: 1rem;
+    }
+
     .carousel-cell > div > .project-code {
         display: none;
     }
@@ -344,6 +348,12 @@ main[data-page="about"] > #about {
     }
 }
 
+@media only screen and (max-width: 420px) and (max-height: 600px){
+    #about > .carousel-cell > div > .project-description {
+        margin-bottom: 20px;
+    }
+}
+
 main[data-page="contact"] > #contact {
     display: flex;
     justify-content: center;
@@ -372,9 +382,15 @@ main[data-page="contact"] > #contact {
 .card {
     background-color: #0b0b0b;
     border-radius: 10px;
-    height: 30vh;
+    height: 28vh;
     position: relative;
     width: 25vw;
+}
+
+@media only screen and (max-height: 600px){
+    .card {
+        height: 22vh;
+    }
 }
 
 .card:before {
@@ -500,6 +516,16 @@ nav {
     }
 }
 
+@media only screen and (max-height: 600px) {
+    body[data-nav="open"] > main {
+        transform: translateY(-100%);
+    }
+
+    nav {
+        bottom: 20vh;
+    }
+}
+
 
 #nav-links {
     display: flex;
@@ -532,7 +558,7 @@ body[data-nav="open"] > nav > #nav-links {
 }
 
 #nav-links > .nav-link > .nav-link-image {
-    width: max(22vw, 150px);
+    width: max(22vw, 120px);
     aspect-ratio: 1.8 / 1;
     border-radius: 0.5rem;
     margin-top: 0.75rem;
