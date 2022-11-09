@@ -1,7 +1,11 @@
 {
   "projects": {
-    "default": "bawnorton",
     "staging": "bawnorton"
   },
-  "targets": {}
+  "targets": {},
+  "etags": {},
+  "work": {
+    "default": "bawnorton",
+    "staging": "bawnorton"
+  }
 }
