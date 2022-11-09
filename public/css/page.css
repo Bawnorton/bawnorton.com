@@ -42,6 +42,11 @@ h3 {
     text-transform: uppercase;
 }
 
+@font-face {
+    font-family: 'Montserrat', 'Rubik';
+    font-display: swap;
+}
+
 main > article {
     position: relative;
     height: 100%;
@@ -313,7 +318,7 @@ main[data-page="about"] > #about {
     font-size: max(4vw, 40px);
 }
 
-@media only screen and (max-width:420px) {
+@media only screen and (max-width:600px) {
     #about > .carousel-cell > div {
         grid-template-columns: none;
         grid-template-rows: 1fr 1fr 5fr 5fr;
