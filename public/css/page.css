@@ -199,6 +199,11 @@ main[data-page="work"] > #work {
     background-size: cover;
 }
 
+.bchacks > .project-image {
+    background: white;
+    background-size: cover;
+}
+
 .project-image > img {
     height: auto;
     object-fit: cover;
@@ -228,6 +233,11 @@ main[data-page="work"] > #work {
 
 .bots > .project-image > img {
     width: min(100%, 1600px);
+}
+
+.bchacks > .project-image > img {
+    width: min(70%, 1600px);
+
 }
 
 .project-description {
