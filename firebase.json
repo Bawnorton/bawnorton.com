@@ -8,8 +8,12 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "!/license/**",
         "destination": "/html/index.html"
+      },
+      {
+        "source": "/license/**",
+        "destination": "/html/license.html"
       }
     ],
     "headers": [
