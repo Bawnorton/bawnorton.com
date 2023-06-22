@@ -14,6 +14,7 @@ function respondToVisibilityChange(element, callback) {
 
 document.addEventListener("DOMContentLoaded", () => {
     let navToggle = document.querySelector("#nav-toggle")
+    let githubButton = document.querySelector("#github-button")
     let navLinks = document.querySelectorAll(".nav-link")
 
     let main = document.querySelector("main")
@@ -30,6 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
     anime({
         targets: '#nav-toggle',
         bottom: ['-12rem', '3rem'],
+        easing: 'easeInOutBack',
+        delayTime: 300,
+        duration: 1500,
+    })
+
+    anime({
+        targets: '#github-button',
+        right: ['-12rem', '3rem'],
         easing: 'easeInOutBack',
         delayTime: 300,
         duration: 1500,
@@ -53,6 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.dataset.nav = document.body.dataset.nav === "open" ? "closed" : "open";
     })
 
+    githubButton.addEventListener("click", () => {
+        window.open("https://github.com/Benjamin-Norton", "_blank")
+    })
+
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
             let selected;
@@ -72,6 +85,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 easing: "easeInOutSine"
             });
             main.dataset.page = link.querySelector("h2").innerText.toLowerCase()
+            console.log(main.dataset.page)
+            if(main.dataset.page !== "home" && githubButton.style.right !== "-12rem") {
+                anime({
+                    targets: `#github-button`,
+                    right: ['3rem', '-12rem'],
+                    easing: 'easeInOutSine',
+                    duration: 500
+                })
+            } else if (main.dataset.page === "home" && githubButton.style.right !== "3rem") {
+                anime({
+                    targets: `#github-button`,
+                    right: ['-12rem', '3rem'],
+                    easing: 'easeInOutSine',
+                    duration: 500
+                })
+            }
         })
     });
 
@@ -82,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let ageString = age.toString()
         let dotIndex = ageString.indexOf(".")
         let decimal = ageString.substring(dotIndex + 1)
-        let hue = decimal * 360
+        let hue = parseFloat("0." + decimal.substring(0, 3)) * 360
         ageSpan.innerText = ageString.substring(0, dotIndex + 10)
         ageSpan.style.color = `hsl(${hue}, 55%, 75%)`
     }, 50);

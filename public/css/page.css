@@ -460,21 +460,24 @@ main[data-page="contact"] > #contact {
     stroke: var(--color-primary);
 }
 
-#nav-toggle {
+.home-button {
     height: max(5rem, 5vw);
     width: max(5rem, 5vw);
     position: fixed;
     z-index: 3;
-    left: 50%;
-    bottom: 3rem;
-    transform: translateX(-50%);
     background-color: transparent;
     border: 2px solid var(--color-primary);
     border-radius: 5rem;
     cursor: pointer;
-    transition: transform, background-color;
+    transition: transform, background-color, border-color;
     transition-timing-function: ease;
     transition-duration: 0.4s;
+}
+
+#nav-toggle {
+    left: 50%;
+    bottom: 3rem;
+    transform: translateX(-50%);
 }
 
 #nav-toggle:hover {
@@ -485,17 +488,48 @@ main[data-page="contact"] > #contact {
     transform: translateX(-50%) scale(0.9);
 }
 
-#nav-toggle > i {
+#github-button {
+    top: 3rem;
+    right: 3rem;
+    transform: translateX(0);
+}
+
+#github-button > i {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+#github-button:hover {
+    transform: translateX(0) scale(1.1);
+}
+
+#github-button:active {
+    transform: translateX(0) scale(0.9);
+}
+
+.home-button > i {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) scale(0.9);
+    transform: translate(-50%, -50%) scale(0.7);
     color: var(--color-primary);
     font-size: 2rem;
     opacity: 0;
-    transition: transform, opacity;
+    transition: transform, opacity, color;
     transition-timing-function: ease;
     transition-duration: 0.4s;
+}
+
+.home-button:hover {
+    border-color: rgb(160, 79, 179);
+}
+
+.home-button:hover > i {
+    color: rgb(160, 79, 179);
+}
+
+body[data-nav="closed"] > #nav-toggle > .open {
+    opacity: 1;
 }
 
 body[data-nav="open"] > #nav-toggle {
@@ -509,6 +543,11 @@ body[data-nav="open"] > #nav-toggle > i {
 body:not([data-nav="open"]) > #nav-toggle:hover > .open {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+}
+
+#github-button:hover > i {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.5);
 }
 
 body[data-nav="open"] > #nav-toggle > .close {
