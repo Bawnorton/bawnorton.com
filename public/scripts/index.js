@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     githubButton.addEventListener("click", () => {
-        window.open("https://github.com/Benjamin-Norton", "_blank")
+        window.open("https://github.com/Bawnorton", "_blank")
     })
 
     navLinks.forEach(link => {
