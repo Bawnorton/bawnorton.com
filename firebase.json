@@ -8,6 +8,10 @@
     ],
 "rewrites": [
   {
+    "source": "/cv/**",
+    "destination": "/resources/cv.pdf"
+  },
+  {
     "source": "!/license/**",
     "destination": "/html/index.html"
   },
